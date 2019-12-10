@@ -1,0 +1,17 @@
+# Task
+
+Read an integer N . For all non-negative integers i<n , print i^2. See the sample for details.
+# Input Format
+
+The first and only line contains the integer N
+#Constraints
+1<=n<=20
+
+#solution
+
+n = int(input())
+if (n<=0) and (n>=20):
+    print("Exit")
+else:
+    for i in range(0,n):
+        print(i*i)
