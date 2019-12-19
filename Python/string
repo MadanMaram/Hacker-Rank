@@ -1,0 +1,28 @@
+# task
+how to print the without using any string method 123....n where .... represents values in between
+for eg 
+1) if we input 3 then output should be 123
+2) if we input 7 then output should be 1234567
+
+Read an integer N.
+
+Without using any string methods, try to print the following:
+123....N
+
+Note that "" represents the values in between.
+
+Input Format
+
+The first line contains an integer .
+
+# code
+
+n = int(input("num:"))
+for i in range(1,n+1):
+        print(i,end="")
+        
+        (or)
+        
+value=int(input())
+for number in range(value) :
+    print(number+1, end="")
