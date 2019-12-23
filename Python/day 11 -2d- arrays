@@ -1,0 +1,56 @@
+# day11 2d arrays
+## Objective
+Today, we're building on our knowledge of Arrays by adding another dimension. Check out the Tutorial tab for learning materials and an instructional video!
+
+Context
+Given a  2D Array, :
+
+1 1 1 0 0 0
+0 1 0 0 0 0
+1 1 1 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+We define an hourglass in  to be a subset of values with indices falling in this pattern in 's graphical representation:
+
+a b c
+  d
+e f g
+There are  hourglasses in , and an hourglass sum is the sum of an hourglass' values.
+
+Task
+Calculate the hourglass sum for every hourglass in , then print the maximum hourglass sum.
+
+Input Format
+
+There are  lines of input, where each line contains  space-separated integers describing 2D Array ; every value in  will be in the inclusive range of  to .
+
+Constraints
+
+Output Format
+
+Print the largest (maximum) hourglass sum found in .
+
+
+##############################################3
+
+if __name__ == '__main__':
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+    smax = -9 * 7
+
+for row in range(len(arr) - 2):
+    for column in range(len(arr[row]) - 2):
+        tl = arr[row][column]
+        tc = arr[row][column + 1]
+        tr = arr[row][column + 2]
+        mc = arr[row + 1][column + 1]
+        bl = arr[row + 2][column]
+        bc = arr[row + 2][column + 1]
+        br = arr[row + 2][column + 2]
+        s = tl + tc + tr + mc + bl + bc + br
+        smax = max(s, smax)
+
+print(smax)
